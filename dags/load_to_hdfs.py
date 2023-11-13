@@ -23,11 +23,13 @@ with dag:
     #     command = bash_commands
     # )
 
+    # list files in the folder
     run_this = BashOperator(
     task_id="run_after_loop",
     bash_command='ls -la /opt/airflow/plugins/upload/',
     )
 
+    # try a single file upload
     taskSFTP = SFTPOperator(
     task_id="test_sftp",
     ssh_conn_id="AzureVM",
