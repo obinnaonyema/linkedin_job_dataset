@@ -15,10 +15,9 @@ hdfs_destination = "/user/hdoop/lab/project/"
 
 # hdfs file copy commands
 hdfs_bash_commands = f"""
-whoami
 sudo su hdoop <<EOF
-whoami
-export PATH=$PATH:/home/hdoop/hadoop-3.2.2/bin  # Replace /path/to/hadoop/bin with the actual path to your hadoop bin directory
+# define path to hadoop so we can run hadoop commands in this block
+export PATH=$PATH:/home/hdoop/hadoop-3.2.2/bin  
 cd
 cd hadoop-3.2.2/sbin
 # Check if NameNode and DataNode for DFS are running
